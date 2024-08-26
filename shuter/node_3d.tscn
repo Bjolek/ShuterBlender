@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1bj5yp5rsg0p"]
+
+[ext_resource type="PackedScene" uid="uid://bs2synince6nu" path="res://untitled.glb" id="1_7a3v5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2knv8"]
+custom_aabb = AABB(0, 20, 0, 0, 0, 0)
+size = Vector3(20, 1, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y7hg5"]
+size = Vector3(20, 1, 20)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_anlbb"]
+radius = 0.998054
+height = 7.58433
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_2knv8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_y7hg5")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+
+[node name="untitled" parent="CharacterBody3D" instance=ExtResource("1_7a3v5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55662, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_anlbb")
