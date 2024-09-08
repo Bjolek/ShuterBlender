@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://yj1ygoc88osh"]
+
+[ext_resource type="PackedScene" uid="uid://ceccjuivmgex2" path="res://Homeee.glb" id="1_cnbym"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7fe21"]
+size = Vector3(8.79443, 11.8469, 9.35339)
+
+[node name="Home" type="StaticBody3D"]
+
+[node name="Homeee" parent="." instance=ExtResource("1_cnbym")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.920058, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0661621, 6.7616, 0.0569458)
+shape = SubResource("BoxShape3D_7fe21")
