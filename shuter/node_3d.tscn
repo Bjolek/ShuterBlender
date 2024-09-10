@@ -1,13 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1bj5yp5rsg0p"]
+[gd_scene load_steps=6 format=3 uid="uid://b1bj5yp5rsg0p"]
 
 [ext_resource type="PackedScene" uid="uid://bs2synince6nu" path="res://untitled.glb" id="1_7a3v5"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_2knv8"]
-custom_aabb = AABB(0, 20, 0, 0, 0, 0)
-size = Vector3(20, 1, 20)
+[ext_resource type="PackedScene" uid="uid://yj1ygoc88osh" path="res://home.tscn" id="1_rlt4y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y7hg5"]
 size = Vector3(20, 1, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rcx88"]
+size = Vector3(30, 1, 50)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_anlbb"]
 radius = 0.998054
@@ -17,16 +17,31 @@ height = 7.58433
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-mesh = SubResource("BoxMesh_2knv8")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 21.213)
 shape = SubResource("BoxShape3D_y7hg5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.166529, 3.21297)
+mesh = SubResource("BoxMesh_rcx88")
+
+[node name="Home" parent="StaticBody3D" instance=ExtResource("1_rlt4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -1, 16.213)
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 
 [node name="untitled" parent="CharacterBody3D" instance=ExtResource("1_7a3v5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55662, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.590063, -1.65552)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1.78703)
 shape = SubResource("CapsuleShape3D_anlbb")
+
+[node name="Home" parent="." instance=ExtResource("1_rlt4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -1, 16.213)
+
+[node name="Home2" parent="." instance=ExtResource("1_rlt4y")]
+transform = Transform3D(-0.999896, 0, -0.0143985, 0, 1, 0, 0.0143985, 0, -0.999896, 4.99948, -0.756956, -16.6803)
+
+[node name="Home3" parent="." instance=ExtResource("1_rlt4y")]
+transform = Transform3D(-0.999896, 0, -0.0143985, 0, 1, 0, 0.0143985, 0, -0.999896, -4.99948, -0.756956, -16.5363)
