@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://57q5g8d2r3yh"]
+
+[ext_resource type="PackedScene" uid="uid://pbc1bwwdpeku" path="res://Chak.glb" id="1_5e3bs"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nnmhc"]
+radius = 10.0584
+height = 28.6304
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.0343)
+shape = SubResource("CapsuleShape3D_nnmhc")
+
+[node name="Chak" parent="." instance=ExtResource("1_5e3bs")]
