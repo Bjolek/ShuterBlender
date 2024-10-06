@@ -1,12 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhmluxv2udb7m"]
+[gd_scene load_steps=5 format=3 uid="uid://bhmluxv2udb7m"]
+
+[ext_resource type="Script" path="res://bullet.gd" id="1_8cq0l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b5fjk"]
+albedo_color = Color(0.0962047, 0.0962048, 0.0962047, 1)
+metallic = 0.5
+metallic_specular = 1.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_7tnup"]
+material = SubResource("StandardMaterial3D_b5fjk")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_aauuq"]
 radius = 0.0651835
 height = 0.140248
 
 [node name="RigidBody3D" type="RigidBody3D"]
+script = ExtResource("1_8cq0l")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.0677245, -0.000520954, -0.00144688, 0.00144877, 0.000241469, 0.0677261, -0.000515674, -0.0677396, 0.000252548, 0, 0, 0)
