@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://b1bj5yp5rsg0p"]
+[gd_scene load_steps=11 format=3 uid="uid://b1bj5yp5rsg0p"]
 
 [ext_resource type="PackedScene" uid="uid://yj1ygoc88osh" path="res://home.tscn" id="1_rlt4y"]
 [ext_resource type="Script" path="res://character_body_3d.gd" id="2_8jhu1"]
 [ext_resource type="PackedScene" uid="uid://bthy3vacw4ou5" path="res://gun.glb" id="3_t8l2w"]
+[ext_resource type="PackedScene" uid="uid://bg6cknaitgu32" path="res://tree.glb" id="4_1yc77"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8bd35"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -17,7 +18,7 @@ sky = SubResource("Sky_ee28b")
 tonemap_mode = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y7hg5"]
-size = Vector3(31, 1, 53)
+size = Vector3(69.6523, 1, 60.3726)
 
 [sub_resource type="BoxMesh" id="BoxMesh_rcx88"]
 size = Vector3(30, 1, 50)
@@ -39,15 +40,15 @@ shadow_enabled = true
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 4.713)
+transform = Transform3D(1.08342, 0, -2.08616e-07, 0, 1.08342, 0, 2.08616e-07, 0, 1.08342, 0.0184047, 0, 3.34312)
 shape = SubResource("BoxShape3D_y7hg5")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.166529, 3.21297)
+transform = Transform3D(2.50812, 0, -1.49012e-08, 0, 0.947275, 0, 8.9407e-08, 0, 1.31936, 0, -0.166529, 3.21297)
 mesh = SubResource("BoxMesh_rcx88")
 
 [node name="Home" parent="StaticBody3D" instance=ExtResource("1_rlt4y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -1, 16.213)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.666, -1, 29.2242)
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.77733, 0)
@@ -143,12 +144,15 @@ transform = Transform3D(-0.00848441, -0.0235425, -0.20554, 0.0660438, 0.0149432,
 transform = Transform3D(2.22681, 0, 0, 0, 1, 0, 0, 0, 0.880359, 1.9404, -0.124787, 0.781089)
 
 [node name="Home" parent="." instance=ExtResource("1_rlt4y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -1, 16.213)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.666, -1, 29.2242)
 
 [node name="Home2" parent="." instance=ExtResource("1_rlt4y")]
-transform = Transform3D(-0.999896, 0, -0.0143985, 0, 1, 0, 0.0143985, 0, -0.999896, 4.99948, -0.756956, -16.6803)
+transform = Transform3D(-0.999896, 0, -0.0143985, 0, 1, 0, 0.0143985, 0, -0.999896, -22.2951, -0.756956, -23.8648)
 
 [node name="Home3" parent="." instance=ExtResource("1_rlt4y")]
-transform = Transform3D(-0.999896, 0, -0.0143985, 0, 1, 0, 0.0143985, 0, -0.999896, -4.99948, -0.756956, -16.5363)
+transform = Transform3D(-0.999896, 0, -0.0143985, 0, 1, 0, 0.0143985, 0, -0.999896, -32.2941, -0.756956, -23.7208)
+
+[node name="tree" parent="." instance=ExtResource("4_1yc77")]
+transform = Transform3D(2.63794, 0, -2.08616e-07, 0, 3.71609, 0, 0, 0, 3.65556, 31.6725, 0, 26.1052)
 
 [editable path="CharacterBody3D/gun"]
