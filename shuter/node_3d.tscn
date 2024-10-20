@@ -3,12 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://bon4iiujm2uc7" path="res://building1.glb" id="1_2j5bc"]
 [ext_resource type="Script" path="res://character_body_3d.gd" id="2_8jhu1"]
 [ext_resource type="PackedScene" uid="uid://bthy3vacw4ou5" path="res://gun.glb" id="3_t8l2w"]
-[ext_resource type="PackedScene" uid="uid://bg6cknaitgu32" path="res://tree.glb" id="4_1yc77"]
 [ext_resource type="PackedScene" uid="uid://d1direwpsq3cn" path="res://building2.glb" id="5_446wc"]
 [ext_resource type="PackedScene" uid="uid://dh4togyvnd37e" path="res://building3.glb" id="6_0gd50"]
 [ext_resource type="PackedScene" uid="uid://bdp0l03iivb8e" path="res://building4.glb" id="7_yh85y"]
 [ext_resource type="PackedScene" uid="uid://1jvyx1f18yi2" path="res://building5.glb" id="8_pu0db"]
 [ext_resource type="PackedScene" uid="uid://chyhojk670313" path="res://road2.glb" id="9_it44v"]
+[ext_resource type="PackedScene" uid="uid://b5ppofj2cqi83" path="res://tree.tscn" id="9_s722r"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8bd35"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -44,7 +44,7 @@ transform = Transform3D(-0.106976, 0, 0.994262, 0, 1, 0, -0.994262, 0, -0.106976
 environment = SubResource("Environment_saffa")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, -2.36649, 0)
 shadow_enabled = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
@@ -65,11 +65,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.77733, 0)
 script = ExtResource("2_8jhu1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46926, -3.08467, 0.0561453)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46926, -4.33912, 0.0561453)
 shape = SubResource("CapsuleShape3D_anlbb")
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
-transform = Transform3D(0.0736211, 0, -0.997286, 0, 1, 0, 0.997286, 0, 0.0736211, 0.650807, 0.306265, 0.172151)
+transform = Transform3D(0.0736211, 0, -0.997286, 0, 1, 0, 0.997286, 0, 0.0736211, 0.650807, -2.06023, 0.172151)
 
 [node name="gun" parent="CharacterBody3D" instance=ExtResource("3_t8l2w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.06493, 0)
@@ -90,91 +90,184 @@ bones/7/rotation = Quaternion(-0.00235605, -0.079352, 0.565627, -0.820831)
 [node name="Circle_009" parent="CharacterBody3D/gun/Armature/Skeleton3D" index="0"]
 transform = Transform3D(0.00288551, -0.0240334, 0.00337552, -0.00183152, -0.00330467, -0.0262755, 0.0253342, 0.00249845, -0.00228404, 1.91703, 0.538291, 0.567926)
 
+[node name="Circle_009" parent="CharacterBody3D/gun/Armature/Skeleton3D/Circle_009" index="0"]
+transform = Transform3D(1, 1.49012e-08, -1.86265e-09, 1.49012e-08, 1, 0, 1.11759e-08, -7.45058e-09, 1, 6.6324, 13.1488, 87.9486)
+
 [node name="Cube_016" parent="CharacterBody3D/gun/Armature/Skeleton3D" index="1"]
 transform = Transform3D(-0.000679701, 0.00859736, -0.00146609, 0.000431427, -0.00127993, -0.00941753, -0.00596764, -0.00107175, -0.00051385, 1.87437, 0.397205, 0.599253)
+
+[node name="Cube_016" parent="CharacterBody3D/gun/Armature/Skeleton3D/Cube_016" index="0"]
+transform = Transform3D(1, -2.98023e-08, -7.45058e-09, 1.49012e-08, 1, 0, 0, 0, 1, -28.1562, 39.4901, 244.629)
 
 [node name="Cube_017" parent="CharacterBody3D/gun/Armature/Skeleton3D" index="2"]
 transform = Transform3D(0.003087, -0.000407773, -0.0255763, -0.00195941, 0.00317415, -0.00351683, 0.0271033, 0.000275918, 0.00265884, 1.7414, 0.557617, 0.588279)
 
+[node name="Cube_017" parent="CharacterBody3D/gun/Armature/Skeleton3D/Cube_017" index="0"]
+transform = Transform3D(1, -6.98492e-10, 0, 0, 1, 0, 1.49012e-08, -9.31323e-10, 1, 6.19948, -728.034, 12.3556)
+
 [node name="Cube_018" parent="CharacterBody3D/gun/Armature/Skeleton3D" index="3"]
 transform = Transform3D(0.00252344, -0.000996051, -0.0079312, -0.0016017, 0.00775338, -0.00109057, 0.0221553, 0.000673974, 0.000824504, 1.91576, 0.561067, 0.578227)
+
+[node name="Cube_018" parent="CharacterBody3D/gun/Armature/Skeleton3D/Cube_018" index="0"]
+transform = Transform3D(1, 1.86265e-09, 0, 2.98023e-08, 1, 1.49012e-08, -5.96046e-08, 7.45058e-09, 1, 7.58401, -298.05, 39.8439)
 
 [node name="Cube_020" parent="CharacterBody3D/gun/Armature/Skeleton3D" index="4"]
 transform = Transform3D(-0.00105734, 0.00432527, -0.00104871, 0.000671124, -0.000519605, -0.00824337, -0.00928321, -0.000530204, -0.000476505, 1.98241, 0.492862, 0.577693)
 
+[node name="Cube_020" parent="CharacterBody3D/gun/Armature/Skeleton3D/Cube_020" index="0"]
+transform = Transform3D(1, 0, 5.58794e-09, -2.98023e-08, 1, -1.49012e-08, -3.72529e-09, 7.45058e-09, 1, -18.1, 63.8473, 281.58)
+
 [node name="Cube_021" parent="CharacterBody3D/gun/Armature/Skeleton3D" index="5"]
 transform = Transform3D(0.00111129, -0.00458294, -8.04859e-06, -0.000705369, -3.32816e-05, -0.00872543, 0.00975685, 0.000519583, -0.000629886, 1.97657, 0.496736, 0.528377)
+
+[node name="Cube_021" parent="CharacterBody3D/gun/Armature/Skeleton3D/Cube_021" index="0"]
+transform = Transform3D(1, 0, 4.07454e-09, -2.98023e-08, 1, 0, -1.00117e-08, -4.65661e-10, 1, 17.2215, 3.70206, 269.811)
 
 [node name="Cube_022" parent="CharacterBody3D/gun/Armature/Skeleton3D" index="6"]
 transform = Transform3D(0.000679702, -0.00861841, -0.00131109, -0.000431426, 0.00113699, -0.00943929, 0.00596764, 0.00106382, -0.000533076, 1.8648, 0.400066, 0.522415)
 
+[node name="Cube_022" parent="CharacterBody3D/gun/Armature/Skeleton3D/Cube_022" index="0"]
+transform = Transform3D(1, 2.98023e-08, 0, 0, 1, -1.49012e-08, 1.86265e-09, 0, 1, 28.1562, -35.0799, 245.194)
+
 [node name="Cube_023" parent="CharacterBody3D/gun/Armature/Skeleton3D" index="7"]
 transform = Transform3D(0.00398852, -0.00431187, -0.0542342, -0.00253163, 0.0335641, -0.00745739, 0.0350184, 0.00291761, 0.00563803, 1.97293, 0.547247, 0.561105)
+
+[node name="Cube_023" parent="CharacterBody3D/gun/Armature/Skeleton3D/Cube_023" index="0"]
+transform = Transform3D(1, 1.86265e-09, 2.98023e-08, -1.86265e-09, 1, 0, 0, 0, 1, 4.79823, -68.8501, 5.82676)
 
 [node name="Cylinder_028" parent="CharacterBody3D/gun/Armature/Skeleton3D" index="8"]
 transform = Transform3D(0.000479654, 0.000991494, -0.00372343, -0.00373369, -0.000629331, -0.000511983, -0.000324556, 0.00870511, 0.000387077, 1.93512, 0.461798, 0.557657)
 
+[node name="Cylinder_028" parent="CharacterBody3D/gun/Armature/Skeleton3D/Cylinder_028" index="0"]
+transform = Transform3D(1, -1.11759e-08, 0, 1.86265e-09, 1, 0, -1.49012e-08, 0, 1, 618.93, 19.302, 84.8707)
+
 [node name="Cylinder_029" parent="CharacterBody3D/gun/Armature/Skeleton3D" index="9"]
 transform = Transform3D(0.000628122, 0.000558491, -0.00487595, -0.00488939, -0.000354491, -0.000670458, -0.000425017, 0.00490344, 0.000506889, 1.93711, 0.482612, 0.590663)
+
+[node name="Cylinder_029" parent="CharacterBody3D/gun/Armature/Skeleton3D/Cylinder_029" index="0"]
+transform = Transform3D(1, 5.58794e-09, 7.45058e-09, 1.11759e-08, 1, -1.49012e-08, -7.45058e-09, -1.49012e-08, 1, 472.634, 34.267, 64.81)
 
 [node name="Cylinder_030" parent="CharacterBody3D/gun/Armature/Skeleton3D" index="10"]
 transform = Transform3D(0.000479654, 0.000426482, -0.00372343, -0.00373369, -0.0002707, -0.000511982, -0.000324556, 0.00374442, 0.000387077, 1.92927, 0.498709, 0.595427)
 
+[node name="Cylinder_030" parent="CharacterBody3D/gun/Armature/Skeleton3D/Cylinder_030" index="0"]
+transform = Transform3D(1, 5.58794e-09, 0, -3.72529e-09, 1, 0, 0, 0, 1, 618.93, 44.8737, 84.8707)
+
 [node name="Cylinder_031" parent="CharacterBody3D/gun/Armature/Skeleton3D" index="11"]
 transform = Transform3D(0.00146029, -0.0114091, 0.00164236, -0.000926893, -0.00156879, -0.0127843, 0.0128211, 0.00118606, -0.0011113, 2.26273, 0.54527, 0.526398)
+
+[node name="Cylinder_031" parent="CharacterBody3D/gun/Armature/Skeleton3D/Cylinder_031" index="0"]
+transform = Transform3D(1, 0, -1.86265e-09, -1.49012e-08, 1, -1.49012e-08, 0, 0, 1, 13.1055, 27.698, 180.76)
 
 [node name="Cylinder_032" parent="CharacterBody3D/gun/Armature/Skeleton3D" index="12"]
 transform = Transform3D(0.000479654, 0.000426482, -0.00372343, -0.00373369, -0.0002707, -0.000511982, -0.000324556, 0.00374442, 0.000387077, 1.92181, 0.503618, 0.526968)
 
+[node name="Cylinder_032" parent="CharacterBody3D/gun/Armature/Skeleton3D/Cylinder_032" index="0"]
+transform = Transform3D(1, 5.58794e-09, 0, -3.72529e-09, 1, 0, 0, 0, 1, 618.93, 44.8738, 84.8707)
+
 [node name="Cylinder_033" parent="CharacterBody3D/gun/Armature/Skeleton3D" index="13"]
 transform = Transform3D(0.00263692, -0.200727, 0.00296568, -0.00167373, -0.0276007, -0.0230852, 0.0231516, 0.0208671, -0.00200672, 2.08182, 0.566979, 0.548572)
+
+[node name="Cylinder_033" parent="CharacterBody3D/gun/Armature/Skeleton3D/Cylinder_033" index="0"]
+transform = Transform3D(1, 0, 3.72529e-09, 0, 1, -9.31323e-10, -1.86265e-09, 0, 1, 7.25769, 1.57433, 100.103)
 
 [node name="Cylinder_034" parent="CharacterBody3D/gun/Armature/Skeleton3D" index="14"]
 transform = Transform3D(0.000626508, 0.000557056, -0.00486341, -0.00487682, -0.00035358, -0.000668735, -0.000423925, 0.00489084, 0.000505587, 1.92984, 0.487006, 0.526558)
 
+[node name="Cylinder_034" parent="CharacterBody3D/gun/Armature/Skeleton3D/Cylinder_034" index="0"]
+transform = Transform3D(1, 0, 7.45058e-09, -3.72529e-09, 1, 2.98023e-08, -7.45058e-09, 0, 1, 473.852, 34.3553, 64.9769)
+
 [node name="del_007" parent="CharacterBody3D/gun/Armature/Skeleton3D" index="15"]
 transform = Transform3D(0.00349222, -0.0290867, 0.00408526, -0.00221662, -0.00399951, -0.0318002, 0.030661, 0.00302377, -0.00276428, 2.25388, 0.541496, 0.527133)
+
+[node name="del_007" parent="CharacterBody3D/gun/Armature/Skeleton3D/del_007" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -7.45058e-09, -1.49012e-08, 0, 1, 5.48014, 10.8644, 72.6692)
 
 [node name="Plane_032" parent="CharacterBody3D/gun/Armature/Skeleton3D" index="16"]
 transform = Transform3D(0.0264778, 0.0235426, -0.286917, -0.206107, -0.0149432, -0.0394519, -0.0179161, 0.206699, 0.029827, 1.73063, 0.245882, 0.565358)
 
+[node name="Plane_032" parent="CharacterBody3D/gun/Armature/Skeleton3D/Plane_032" index="0"]
+transform = Transform3D(1, -1.86265e-09, 1.49012e-08, 7.45058e-09, 1, 0, 7.45058e-09, 0, 1, 11.2121, 0.812903, 1.1014)
+
 [node name="Plane_033" parent="CharacterBody3D/gun/Armature/Skeleton3D" index="17"]
 transform = Transform3D(-0.0305515, -0.0163802, -0.184003, 0.0589357, 0.010397, -0.0972145, 0.00774049, -0.143815, 0.0139295, 1.94222, 0.458115, 0.556602)
+
+[node name="Plane_033" parent="CharacterBody3D/gun/Armature/Skeleton3D/Plane_033" index="0"]
+transform = Transform3D(1, 0, -2.38419e-07, 0, 1, 2.98023e-08, 7.45058e-09, 0, 1, -31.2244, -1.16835, 5.28843)
 
 [node name="Plane_034" parent="CharacterBody3D/gun/Armature/Skeleton3D" index="18"]
 transform = Transform3D(-0.00112703, 0.0018087, 0.0167408, 0.00877299, -0.00114803, 0.00230191, 0.000762605, 0.01588, -0.00174033, 1.84251, 0.487746, 0.600789)
 
+[node name="Plane_034" parent="CharacterBody3D/gun/Armature/Skeleton3D/Plane_034" index="0"]
+transform = Transform3D(1, 0, 0, -5.58794e-09, 1, 0, 7.45058e-09, 0, 1, -263.41, 10.581, -18.8766)
+
 [node name="Plane_035" parent="CharacterBody3D/gun/Armature/Skeleton3D" index="19"]
 transform = Transform3D(-0.00126511, -0.00203029, -0.0187918, 0.00984781, 0.00128869, -0.00258394, 0.000856036, -0.0178255, 0.00195354, 1.83654, 0.490282, 0.543039)
+
+[node name="Plane_035" parent="CharacterBody3D/gun/Armature/Skeleton3D/Plane_035" index="0"]
+transform = Transform3D(1, 2.23517e-08, -1.49012e-08, 3.72529e-09, 1, 1.49012e-08, 3.72529e-09, -1.49012e-08, 1, -234.66, -9.42615, 16.8163)
 
 [node name="Plane_036" parent="CharacterBody3D/gun/Armature/Skeleton3D" index="20"]
 transform = Transform3D(-0.00848441, -0.0235425, -0.20554, 0.0660438, 0.0149432, -0.0282624, 0.00574095, -0.206699, 0.0213673, 1.94222, 0.458115, 0.556602)
 
-[node name="RayCast3D" type="RayCast3D" parent="CharacterBody3D"]
-transform = Transform3D(2.22681, 0, 0, 0, 1, 0, 0, 0, 0.880359, 1.9404, -0.124787, 0.781089)
+[node name="Plane_036" parent="CharacterBody3D/gun/Armature/Skeleton3D/Plane_036" index="0"]
+transform = Transform3D(1, 0, 2.98023e-08, 2.79397e-09, 1, 0, 0, -1.49012e-08, 1, -34.9903, -0.812903, 1.53746)
 
-[node name="tree" parent="." instance=ExtResource("4_1yc77")]
-transform = Transform3D(2.63794, 0, -2.68221e-07, 0, 3.71609, 0, 8.9407e-08, 0, 3.65556, -18.057, 0, 25.7415)
+[node name="Cube_001" parent="CharacterBody3D/gun/Armature/Skeleton3D" index="21"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.36649, 0)
+
+[node name="Cube_002" parent="CharacterBody3D/gun/Armature/Skeleton3D" index="22"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.36649, 0)
+
+[node name="Cube_003" parent="CharacterBody3D/gun/Armature/Skeleton3D" index="23"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.36649, 0)
+
+[node name="Cube_004" parent="CharacterBody3D/gun/Armature/Skeleton3D" index="24"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.36649, 0)
+
+[node name="Sphere" parent="CharacterBody3D/gun/Armature/Skeleton3D" index="25"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.36649, 0)
+
+[node name="Sphere_001" parent="CharacterBody3D/gun/Armature/Skeleton3D" index="26"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.36649, 0)
+
+[node name="Sphere_002" parent="CharacterBody3D/gun/Armature/Skeleton3D" index="27"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.36649, 0)
+
+[node name="Sphere_003" parent="CharacterBody3D/gun/Armature/Skeleton3D" index="28"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.36649, 0)
+
+[node name="Sphere_004" parent="CharacterBody3D/gun/Armature/Skeleton3D" index="29"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.36649, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="CharacterBody3D"]
+transform = Transform3D(2.22681, 0, -7.45058e-09, 0, 1, 0, 0, 0, 0.880359, 1.9404, -2.49128, 0.781089)
 
 [node name="building2" parent="." instance=ExtResource("5_446wc")]
-transform = Transform3D(7.014, 0, -5.96046e-08, 0, 7.014, 0, 5.96046e-08, 0, 7.014, -8.18455, 0, -20.29)
+transform = Transform3D(-0.0679412, 0, -7.01367, 0, 7.014, 0, 7.01367, 0, -0.0679412, -7.93715, 0, -22.5894)
 
 [node name="building3" parent="." instance=ExtResource("6_0gd50")]
-transform = Transform3D(6.16978, 0, -5.96046e-08, 0, 6.16977, 0, 5.96046e-08, 0, 6.16978, 24.1169, 0, -23.7081)
+transform = Transform3D(-0.0631011, 0, -6.16946, 0, 6.16977, 0, 6.16946, 0, -0.0631011, 23.6505, 0, -19.3736)
 
 [node name="building4" parent="." instance=ExtResource("7_yh85y")]
 transform = Transform3D(-0.0944577, 0, 4.88389, 0, 4.8848, 0, -4.88389, 0, -0.0944577, 17.9621, 0, 28.3963)
 
 [node name="building5" parent="." instance=ExtResource("8_pu0db")]
-transform = Transform3D(-0.04138, 0, 3.32506, 0, 3.32532, 0, -3.32506, 0, -0.04138, -29.6873, 1.51926, 35.0427)
-
-[node name="tree2" parent="." instance=ExtResource("4_1yc77")]
-transform = Transform3D(0.127674, 0, -3.59499, 0, 3.59725, 0, 3.59499, 0, 0.127674, 5.35702, 0.54171, -21.704)
+transform = Transform3D(-0.04138, 0, 3.32506, 0, 3.32532, 0, -3.32506, 0, -0.04138, -29.6873, 0.232508, 35.0427)
 
 [node name="building6" parent="." instance=ExtResource("5_446wc")]
-transform = Transform3D(-0.658405, 0, -6.11938, 0, 6.1547, 0, 6.11938, 0, -0.658405, -2.59462, 0.474259, 30.3625)
+transform = Transform3D(-0.38163, 0, 6.14286, 0, 6.1547, 0, -6.14286, 0, -0.38163, -2.33857, 0.474259, 27.9827)
 
 [node name="road2" parent="." instance=ExtResource("9_it44v")]
-transform = Transform3D(-2.26955, 0, -0.100259, 0, 0.996691, 0, 0.164354, 0, -1.38447, -0.621324, 0.890297, 6.0825)
+transform = Transform3D(-2.26955, 0, -0.100259, 0, 0.996691, 0, 0.164354, 0, -1.38447, -0.621324, 0.40181, 6.0825)
+
+[node name="StaticBody3D2" parent="." instance=ExtResource("9_s722r")]
+transform = Transform3D(-0.855219, 0, -7.94862, 0, 7.9945, 0, 7.94862, 0, -0.855219, 32.7831, 0.54171, 25.1106)
+
+[node name="StaticBody3D3" parent="." instance=ExtResource("9_s722r")]
+transform = Transform3D(-0.855219, 0, -7.94862, 0, 7.9945, 0, 7.94862, 0, -0.855219, -17.8657, 0.54171, 27.2734)
+
+[node name="StaticBody3D4" parent="." instance=ExtResource("9_s722r")]
+transform = Transform3D(-0.855219, 0, -7.94862, 0, 7.9945, 0, 7.94862, 0, -0.855219, 6.75797, 0.54171, -21.4353)
 
 [editable path="CharacterBody3D/gun"]

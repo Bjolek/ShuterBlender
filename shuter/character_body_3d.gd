@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-const SPEED = 5.0
+const SPEED = 7.0
 const JUMP_VELOCITY = 4.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -39,7 +39,7 @@ func _physics_process(delta):
 
 var rot_y = 0.0
 var rot_x = 0.0
-var rot = 0.1
+var rot = 0.01
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
